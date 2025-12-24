@@ -18,12 +18,13 @@ async function procesarPDF() {
 
     pages.forEach(page => {
         const { width, height } = page.getSize();
+
         page.drawText(texto, {
-            x: width / 4,
+            x: width / 6,
             y: height / 2,
-            size: 40,
-            rotate: PDFLib.degrees(45),
-            opacity: 0.15
+            size: 70,                     // 🔥 más grande
+            rotate: PDFLib.degrees(45),   // diagonal
+            opacity: 0.18                 // visible pero sutil
         });
     });
 
@@ -32,6 +33,6 @@ async function procesarPDF() {
 
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = 'pdf_con_marca_agua.pdf';
+    link.download = file.name; // ✅ MISMO NOMBRE
     link.click();
 }
