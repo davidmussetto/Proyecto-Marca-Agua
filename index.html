@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Marca de Agua PDF</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<title>Marca de agua PDF</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="card">
-    <h1>Marca de agua en PDF</h1>
-    <p class="subtitle">Subí un PDF y descargalo con marca de agua</p>
+    <h1>Marca de agua PDF</h1>
+    <p class="subtitle">Procesamiento local – GitHub Pages</p>
 
-    <form action="WatermarkServlet" method="POST" enctype="multipart/form-data">
-        <label>Archivo PDF</label>
-        <input type="file" name="pdf" accept="application/pdf" required>
+    <input type="file" id="pdfFile" accept="application/pdf">
 
-        <label>Texto de la marca de agua</label>
-        <input type="text" name="watermark"
-               value="EQUIPO ECONOMICO LUSCAS BRONICARDI">
+    <input type="text" id="watermark"
+           value="EQUIPO ECONOMICO LUCAS BRONICARDI">
 
-        <button type="submit">Procesar PDF</button>
-    </form>
+    <button onclick="procesarPDF()">Procesar PDF</button>
 </div>
 
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
